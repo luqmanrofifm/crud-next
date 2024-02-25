@@ -14,6 +14,7 @@ CREATE TABLE saved_meal (
     meal_img VARCHAR(255)
 );
 ```
+And then setup env variable like .env.local.example
 ## Getting Started
 
 First, run the development server:
