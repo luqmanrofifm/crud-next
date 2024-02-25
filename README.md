@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Database
+This project use postgresql, so make sure postgresql installed 
+Before run this project, please create the table first with this command
+```bash
+CREATE TABLE saved_meal (
+    id UUID PRIMARY KEY,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    idmeal INTEGER,
+    meal_name VARCHAR(255),
+    meal_category VARCHAR(255),
+    meal_img VARCHAR(255)
+);
+```
 ## Getting Started
 
 First, run the development server:
