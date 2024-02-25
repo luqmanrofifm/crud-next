@@ -1,3 +1,4 @@
+import Navbar from "@/component/Navbar";
 import connectToDb, { pool } from "@/utils/dbconnect";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -23,6 +24,8 @@ export default async function SavedReceipe() {
       }
 
     return (
+        <>
+        <Navbar/>
         <div className="container mx-auto px-4">
             <h1 className="text-2xl font-bold mb-4">Saved Receipe</h1>
             <div className="grid grid-cols-4 gap-4">
@@ -43,5 +46,7 @@ export default async function SavedReceipe() {
                 ))}
             </div>    
         </div>
+        </>
+        
     );
 }

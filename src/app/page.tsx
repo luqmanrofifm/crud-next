@@ -1,3 +1,4 @@
+import Navbar from "@/component/Navbar";
 import { CategoryModel } from "../interface/CategoryModel";
 import axios from "axios";
 import Link from "next/link";
@@ -7,7 +8,9 @@ export default async function Home() {
     const data: CategoryModel[] = response.data.categories;
 
     return (
-        <div className="container mx-auto px-4">
+      <>
+      <Navbar/>
+      <div className="container mx-auto px-4">
             <h1 className="text-2xl font-bold mb-4">Categories</h1>
             <div className="grid grid-cols-4 gap-4">
             
@@ -24,5 +27,7 @@ export default async function Home() {
                 ))}
             </div>
         </div>
+      </>
+        
     );
 }

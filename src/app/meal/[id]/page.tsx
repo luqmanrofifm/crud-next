@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
 import { redirect } from "next/navigation";
 import swal from 'sweetalert';
+import Navbar from "@/component/Navbar";
 
 export default async function Meal({params}: DetailProps) {
     connectToDb();
@@ -55,7 +56,9 @@ export default async function Meal({params}: DetailProps) {
     }
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
+      <>
+      <Navbar/>
+      <div className="max-w-4xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold mb-4">{data.strMeal}</h1>
           <img src={data.strMealThumb} alt={data.strMeal} className="max-w-64 rounded-lg mb-4" />
           {
@@ -94,5 +97,7 @@ export default async function Meal({params}: DetailProps) {
           {data.strYoutube && <p className="text-lg mt-8"><span className="font-semibold">Youtube Link:</span> <a href={data.strYoutube} className="text-blue-500">{data.strYoutube}</a></p>}
           {data.strSource && <p className="text-lg mt-4"><span className="font-semibold">Source:</span> <a href={data.strSource} className="text-blue-500">{data.strSource}</a></p>}
         </div>
+      </>
+        
       );
 }
